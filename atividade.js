@@ -9,11 +9,17 @@ const livros = require('./biblioteca');
 // ------------------------------------------------------------------------
 
 // Sua vez
+function encontrarLivrosPorGenero(nome){
+    const livrosDeFicao = livros.filter(function(livro){
+        return livro.genero === nome;
+    });
+    return livrosDeFicao;
+};
 
 // Teste da Atividade 1
 console.log('--- Atividade 1: Livros de Ficção Científica (Função Tradicional) ---');
-// const livrosDeFiccao = encontrarLivrosPorGenero('Ficção Científica');
-// console.log(livrosDeFiccao);
+const livrosDeFiccao = encontrarLivrosPorGenero('Ficção Científica');
+console.log(livrosDeFiccao);
 
 
 // ------------------------------------------------------------------------
@@ -25,11 +31,15 @@ console.log('--- Atividade 1: Livros de Ficção Científica (Função Tradicion
 
 // Sua vez
 
+const encontrarLivrosPorGeneroArrow = (nome) => livros.filter(
+    livro => livro.genero === nome
+);
 
 // Teste da Atividade 2
 console.log('\n--- Atividade 2: Livros de Distopia (Arrow Function) ---');
-// const livrosDeDistopia = encontrarLivrosPorGeneroArrow('Distopia');
-// console.log(livrosDeDistopia);
+const livrosDeDistopia = encontrarLivrosPorGeneroArrow('Distopia');
+
+console.log(livrosDeDistopia);
 
 
 // ------------------------------------------------------------------------
@@ -41,12 +51,12 @@ console.log('\n--- Atividade 2: Livros de Distopia (Arrow Function) ---');
 
 
 // Sua vez
-
+const obterApenasTitulos = () => livros.map(livro => livro.titulo);
 
 // Teste da Atividade 3
 console.log('\n--- Atividade 3: Lista de todos os títulos ---');
-// const todosOsTitulos = obterApenasTitulos();
-// console.log(todosOsTitulos);
+const todosOsTitulos = obterApenasTitulos();
+console.log(todosOsTitulos);
 
 
 // ------------------------------------------------------------------------
